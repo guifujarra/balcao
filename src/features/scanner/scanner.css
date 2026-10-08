@@ -1,0 +1,166 @@
+/* A prévia Android é nativa e fica atrás do WebView transparente. */
+html.camera-open,
+html.camera-open body,
+html.camera-open #root {
+  background: transparent !important;
+}
+html.camera-open body {
+  overflow: hidden;
+}
+html.camera-open .app-shell {
+  visibility: hidden;
+}
+.camera-scanner {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 40;
+  overflow: hidden;
+  color: #fff;
+  isolation: isolate;
+}
+.camera-scanner-preview {
+  position: absolute !important;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+.camera-scanner-preview video {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: auto !important;
+  min-width: 100%;
+  height: 100% !important;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+.camera-aim {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  width: min(74vw, 42vh, 360px);
+  height: min(74vw, 42vh, 360px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 18px;
+  box-shadow: 0 0 0 200vmax rgba(0, 0, 0, 0.56);
+  z-index: -1;
+  pointer-events: none;
+}
+.camera-aim i {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 4px solid #fff;
+}
+.camera-aim i:nth-child(1) {
+  left: -2px;
+  top: -2px;
+  border-right: 0;
+  border-bottom: 0;
+  border-radius: 18px 0 0;
+}
+.camera-aim i:nth-child(2) {
+  right: -2px;
+  top: -2px;
+  border-left: 0;
+  border-bottom: 0;
+  border-radius: 0 18px 0 0;
+}
+.camera-aim i:nth-child(3) {
+  left: -2px;
+  bottom: -2px;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0 0 0 18px;
+}
+.camera-aim i:nth-child(4) {
+  right: -2px;
+  bottom: -2px;
+  border-left: 0;
+  border-top: 0;
+  border-radius: 0 0 18px;
+}
+.camera-scanner-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(16px + var(--safe-top)) max(16px, var(--safe-right)) 16px
+    max(16px, var(--safe-left));
+}
+.camera-scanner-header h1 {
+  flex: 1;
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+}
+.camera-scanner-header .button {
+  color: #fff;
+  min-width: 48px;
+}
+.camera-scanner-header .button:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+.camera-scanner-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px max(20px, var(--safe-right)) calc(24px + var(--safe-bottom))
+    max(20px, var(--safe-left));
+  text-align: center;
+}
+.camera-scanner-footer p {
+  font-size: 15px;
+  margin: 0;
+}
+.camera-scanner-footer small {
+  color: #eee;
+  font-size: 12px;
+}
+.camera-scanner-actions {
+  display: grid;
+  gap: 12px;
+}
+.camera-scanner-actions .button {
+  width: 100%;
+  min-height: 52px;
+}
+.camera-unknown {
+  padding: 12px;
+  border-radius: 12px;
+  background: #24362d;
+}
+html.camera-open .toast-region {
+  top: calc(84px + var(--safe-top));
+  bottom: auto;
+}
+@media (min-width: 600px) {
+  .camera-scanner-footer {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .camera-aim {
+    top: 50%;
+    left: 32%;
+    width: 56vh;
+    height: 56vh;
+  }
+  .camera-scanner-footer {
+    left: 62%;
+    padding-top: 0;
+    padding-bottom: 12px;
+  }
+  .camera-scanner-footer small {
+    display: none;
+  }
+}

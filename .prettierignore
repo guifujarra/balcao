@@ -1,0 +1,9 @@
+node_modules
+dist
+android
+ios
+test-results
+playwright-report
+offline-test-results
+docs/PLANEJAMENTO_EXECUCAO_APP_GESTAO.md
+pnpm-lock.yaml

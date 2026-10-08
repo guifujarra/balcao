@@ -1,0 +1,18 @@
+{
+  "serial": "emulator-5556",
+  "platform": "13",
+  "assertions": [
+    "QR do produto em PNG de 1024 × 1184 e painel nativo de compartilhamento",
+    "Cadastro offline e botão voltar fechando o diálogo",
+    "Primeira leitura do QR inicia a venda e chama Haptics.notification após gravar",
+    "Venda offline com baixa de 2 unidades",
+    "Processo encerrado e reaberto com saldo e histórico preservados",
+    "Banco SQLite nativo balcaoSQLite.db presente",
+    "Backup nativo em arquivo com o saldo correto",
+    "ML Kit nativo reconhece offline o QR do produto no PNG exportado",
+    "Eventos nativos injetados com o QR decodificado: adição contínua, proteção de duplicata e Haptics após gravar",
+    "Prévia CameraX nativa em tela cheia, mira visível e nenhuma captura pelo WebView",
+    "Botão voltar encerra a sessão de câmera e retorna ao carrinho"
+  ],
+  "completedAt": "2026-10-03T18:07:40.039Z"
+}
